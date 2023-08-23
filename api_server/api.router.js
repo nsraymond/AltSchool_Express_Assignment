@@ -1,29 +1,22 @@
 const express = require('express');
 const router = express.Router();
-
-const { 
-    createNewItem, 
-    getAllItems, 
-    getSingleItem, 
-    updateItem, 
-    deleteItem
-} = require('./api.controller');
+const controller = require('./api.controller');
 
 
 // Create item
-router.post('/', createNewItem);
+router.post('/', controller.createNewItem);
 
 // Get all items
-router.get('/', getAllItems);
+router.get('/', controller.getAllItems);
 
 // Get one item
-router.get('/:id', getSingleItem);
+router.get('/:id', controller.getSingleItem);
 
 // Update item
-router.patch('/:id', updateItem);
+router.patch('/:id', controller.updateItem);
 
 // Delete item
-router.delete('/:id', deleteItem);
+router.delete('/:id', controller.deleteItem);
 
 
 module.exports = router;

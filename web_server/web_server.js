@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 
 // IMPORTING CONTROLLER FUNCTIONS
-const { homePageHandler, errorPageHandler } = require('./web.controller');
+const controller = require('./web.controller');
 
 // PORT
 const PORT = 5000;
@@ -14,8 +14,8 @@ const PORT = 5000;
 app.use(express.static('public'));
 
 // GET REQUESTS
-app.get('/index.html', homePageHandler);
-app.get('*', errorPageHandler);
+app.get('/index.html', controller.homePageHandler);
+app.get('*', controller.errorPageHandler);
 
 
 
