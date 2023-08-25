@@ -4,12 +4,14 @@ const app = express();
 const PORT = 8000;
 
 // IMPORTING ITEMS ROUTER
-const itemsRouter = require('./api.router');
+const itemsRouter = require('./items/items.router');
+const usersRouter = require('./authentication/users/users.router');
 
 // BODYPARSER
 app.use(express.json());
 
 app.use('/items', itemsRouter);
+app.use('/users', usersRouter);
 
 // RANDOM URL
 app.get('*', (req, res) => {

@@ -1,5 +1,5 @@
-// FAKE DATABASE
-const items = require('./database/data.json');
+// DB
+const items = require('../database/data.json');
 
 // CREATE ITEM
 function createNewItem(req, res){
